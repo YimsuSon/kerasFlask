@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>H</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+        <body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2C3E50;">
+            <a class="navbar-brand" href="/">Image Classification App</a>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                
+              </div>
+            </div>
+          </nav>
+
+        <div class="container">
+            <br>
+            <br>
+            <h4>Image Classifcation Web App </h4>
+            <br>
+        </div>
+
+        {% block body %}
+        
+            <form class ="p-3 text-center" action='/', method="post" enctype="multipart/form-data">
+                <input class="form-control" type="file" name="imagefile">
+                <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+            
+            </form>
+
+            {% if prediction %}
+                <p class = 'text-center'> Image is a {{prediction}} </p>
+            {% endif %}
+        
+        {% endblock  %}
+
+
+        <!-- Footer -->
+        <div class="container">
+            <hr>
+            <footer>
+                Developed by HAN</a>
+            </footer>
+        </div>
+    </body>
+</html>
